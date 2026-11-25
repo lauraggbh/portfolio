@@ -1,0 +1,100 @@
+:root {
+  --text: #1a1a1a;
+  --muted: #6b6b6b;
+  --line: #e6e6e6;
+  --bg: #ffffff;
+  --soft: #f5f5f4;
+  --max: 680px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+main { max-width: var(--max); margin: 0 auto; padding: 96px 24px 64px; }
+
+a { color: inherit; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { color: var(--muted); }
+
+/* ---------- Portada ---------- */
+.name { font-size: 2.25rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
+.role { color: var(--muted); font-size: 1.125rem; margin-top: 4px; }
+.now { margin-top: 32px; }
+.now strong { font-weight: 500; }
+.intro { margin-top: 24px; font-size: 1.25rem; line-height: 1.5; }
+.intro span { display: block; color: var(--muted); font-size: 1rem; margin-top: 8px; }
+
+.links { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 32px; list-style: none; font-size: 0.95rem; }
+
+.section-label {
+  font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--muted); margin: 96px 0 8px;
+}
+
+.projects { list-style: none; }
+.projects a {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+  padding: 24px 0; border-bottom: 1px solid var(--line); text-decoration: none;
+}
+.projects li:first-child a { border-top: 1px solid var(--line); }
+.projects .title { font-size: 1.25rem; font-weight: 500; }
+.projects .desc { color: var(--muted); font-size: 0.95rem; display: block; margin-top: 2px; }
+.projects .arrow { color: var(--muted); transition: transform .2s; }
+.projects a:hover { color: inherit; }
+.projects a:hover .arrow { transform: translateX(4px); color: var(--text); }
+
+/* ---------- Proyecto ---------- */
+.back { font-size: 0.95rem; color: var(--muted); text-decoration: none; }
+.back:hover { color: var(--text); }
+
+.case-num { color: var(--muted); font-size: 0.95rem; margin-top: 48px; }
+.case-title { font-size: 2.25rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; margin-top: 4px; }
+.case-sub { color: var(--muted); font-size: 1.125rem; margin-top: 4px; }
+.lead { font-size: 1.25rem; line-height: 1.5; margin-top: 32px; }
+
+.meta { display: flex; gap: 48px; flex-wrap: wrap; margin-top: 32px; font-size: 0.95rem; }
+.meta dt { color: var(--muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; }
+
+article h2 { font-size: 1.125rem; font-weight: 600; margin: 64px 0 12px; }
+article p + p { margin-top: 12px; }
+article ul { margin: 16px 0 0 20px; }
+article li { margin-top: 4px; }
+
+.pullquote { font-size: 1.25rem; font-weight: 500; margin-top: 24px; padding-left: 16px; border-left: 2px solid var(--text); }
+
+/* Proceso (BBVA) */
+.process { list-style: none; counter-reset: step; margin: 24px 0 0 0 !important; }
+.process li { counter-increment: step; display: flex; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--line); margin: 0; }
+.process li::before { content: counter(step, decimal-leading-zero); color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* Imágenes: sustituir los .placeholder por <img src="..." alt="..."> */
+figure { margin-top: 24px; }
+figure img { width: 100%; display: block; border-radius: 6px; border: 1px solid var(--line); }
+.placeholder {
+  aspect-ratio: 16 / 10; background: var(--soft); border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted); font-size: 0.9rem; text-align: center; padding: 16px;
+}
+figcaption { color: var(--muted); font-size: 0.85rem; margin-top: 8px; }
+
+.note { margin-top: 64px; font-size: 0.85rem; color: var(--muted); padding-top: 24px; border-top: 1px solid var(--line); }
+
+.next { display: block; margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--line); text-decoration: none; }
+.next small { display: block; color: var(--muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.next span { font-size: 1.25rem; font-weight: 500; }
+
+footer { max-width: var(--max); margin: 0 auto; padding: 32px 24px 64px; color: var(--muted); font-size: 0.85rem; }
+
+@media (max-width: 600px) {
+  main { padding-top: 56px; }
+  body { font-size: 16px; }
+  .name, .case-title { font-size: 1.85rem; }
+  .section-label { margin-top: 64px; }
+}
